@@ -492,5 +492,11 @@ const people = [
   },
 ];
 /*
-  1.- 
+  1.- necesito obtener una nueva lista que incluya el nombre completo de cada persona y su edad
+  ["Hola, soy {nombre_completo} y tengo {edad} años"] 
+  2.- Necesito obtener una lista con las nacionalidades que se encuentran actualmente en la lista original
+  ["MX","IE"...]
+  3.- Necesito una lista con las nacionalidades pero sin repetidos
+  4.- Necesito saber la edad promedio de las personas en la lista
+  5.- Necesito una lista con aquellas personas cuyo nombre completo tenga menos de 25 caracteres
 */
