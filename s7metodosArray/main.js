@@ -494,9 +494,43 @@ const people = [
 /*
   1.- necesito obtener una nueva lista que incluya el nombre completo de cada persona y su edad
   ["Hola, soy {nombre_completo} y tengo {edad} años"] 
+*/
+//https://flagsapi.com/BE/flat/64.png
+/*
+{
+    gender: "male",
+    name: {
+      title: "Mr",
+      first: "Valentin",
+      last: "Centeno",
+    },
+    dob: {
+      date: "1956-09-17T13:38:41.475Z",
+      age: 66,
+    },
+    nat: "MX",
+  }
+  */
+const modifyPeople = (peopleArray) => {
+  let result = peopleArray.map((person) => {
+    let fullName = `${person.name.first} ${person.name.last}`;
+    let nat = person.nat;
+    let flagIcon = `https://flagsapi.com/${nat}/flat/64.png`;
+    return { fullName, nat, flagIcon };
+  });
+  return result;
+};
+
+let peopleTest = modifyPeople(people);
+console.log(peopleTest);
+/*
   2.- Necesito obtener una lista con las nacionalidades que se encuentran actualmente en la lista original
   ["MX","IE"...]
   3.- Necesito una lista con las nacionalidades pero sin repetidos
   4.- Necesito saber la edad promedio de las personas en la lista
   5.- Necesito una lista con aquellas personas cuyo nombre completo tenga menos de 25 caracteres
 */
+
+let getAllNationalities = (peopleArray) => [peopleArray.map(({ nat }) => nat)];
+
+console.log(getAllNationalities(people));
