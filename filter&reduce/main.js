@@ -720,3 +720,108 @@ let data = [
     5.- Necesito saber la cantidad de personajes cuyo género sea "Male"
     6.- Necesito una nueva lista que contenga sólo la información de nombre, tipo y especie de cada personaje
 */
+
+let people = [
+  {
+    name: "0",
+    age: 15,
+  },
+  {
+    name: "0",
+    age: 25,
+  },
+  {
+    name: "0",
+    age: 30,
+  },
+];
+
+const getAverage = (people /*es el array de personas*/) => {
+  let total = 0; /*aloja la sumatoria total de edades*/
+  people.forEach((person /*representa cada objeto dentro del array*/) => {
+    let personAge = person.age; /*es la extracción de la edad de cada persona*/
+    total += personAge; /*agregamos la edad al total*/
+    console.log(person.length);
+  });
+  let average = total / people.length; /*sacamos el promedio*/
+  return average;
+};
+
+console.log(getAverage(people));
+
+let koders = [
+  {
+    name: "koder 1",
+    age: 25,
+  },
+  {
+    name: "koder 2",
+    age: 25,
+  },
+  {
+    name: "koder 3",
+    age: 12,
+  },
+  {
+    name: "koder 4",
+    age: 18,
+  },
+  {
+    name: "koder 5",
+    age: 30,
+  },
+];
+
+// {
+//   mayores:n,/*valor numérico*/
+//   menores:o,/*valor numérico*/
+// }
+
+// {
+//   mayores:[
+// koder
+//],/*valor numérico*/
+//   menores:o,/*valor numérico*/
+// }
+
+const separateByAge = (kodersArray) => {
+  let result = kodersArray.reduce(
+    (accum, current) => {
+      current.age >= 25
+        ? ((accum.mayores.koders = [
+            ...accum.mayores.koders,
+            { generation: "27", ...current },
+          ]),
+          (accum.mayores.totalAge += current.age))
+        : ((accum.menores.koders = [...accum.menores.koders, current]),
+          (accum.menores.totalAge += current.age));
+      return accum;
+    },
+    {
+      mayores: {
+        totalAge: 0,
+        koders: [],
+      },
+      menores: {
+        totalAge: 0,
+        koders: [],
+      },
+    }
+  );
+  return result;
+};
+
+let testSeparate = separateByAge(koders);
+
+console.log(testSeparate);
+
+// const addTotalAge = modifiedObject;
+
+// const getTotalAges = (kodersArray) => {
+//   let total = 0;
+//   kodersArray.forEach((koder) => (total += koder.age));
+//   return total;
+// };
+
+// const getTotalAges2 = (kodersArray) =>
+//   kodersArray.reduce((accum, current) => accum + current, 0);
