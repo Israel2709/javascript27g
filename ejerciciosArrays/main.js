@@ -282,3 +282,13 @@ let products = [
     6.- Necesito poder obtener la información de un producto específico con base en su id
         //filter
 */
+
+const filterByPrice = (price, data) => {
+  let result = data.filter((product) => product.price <= price);
+  return result;
+};
+
+let result1 = filterByPrice(150, products);
+let result2 = filterByPrice(50, products);
+
+const filterById = () => {};
