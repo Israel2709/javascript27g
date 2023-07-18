@@ -13,9 +13,6 @@ printSomething();
 const productOfTwoNumbers = (firstNumber, secondNumber) =>
   firstNumber * secondNumber;
 
-let firstProduct = productOfTwoNumbers(9, 16);
-console.log(firstProduct);
-
 const koders = [
   {
     /*item*/ name: "Jonhatan",

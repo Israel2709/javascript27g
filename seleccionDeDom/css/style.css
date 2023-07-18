@@ -1,0 +1,63 @@
+/* selector universal
+* {
+  font-family: arial;
+}
+
+/*selector por tagname*/
+li {
+  padding: 1rem;
+}
+
+/*selector por clase*/
+.form-control {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*selector por id*/
+#koders-list {
+  box-shadow: 5px 5px 5px #dadada;
+}
+
+/*selector por anidación*/
+#koders-list li {
+  background-color: peru;
+  border: 1px solid purple;
+}
+
+/*selector de descendiente directo*/
+#koders-list > li {
+  background-color: purple;
+}
+
+/*pseudoclases o pseudoselectores*/
+#koders-list li:first-child {
+  text-transform: uppercase;
+}
+
+#koders-list li:last-child {
+  text-decoration: underline;
+}
+
+#koders-list li:nth-child(even) {
+  color: white;
+}
+
+#koders-list li:nth-child(odd) {
+  color: #333;
+}
+
+#koders-list li:nth-child(3) {
+  color: red;
+}
+
+#mentors-list li:not(.active) {
+  background-color: #acacac;
+}
+
+#mentors-list li.active + li {
+  text-decoration: underline;
+}
+
+#mentors-list li.active ~ li {
+  font-style: italic;
+}
