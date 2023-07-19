@@ -669,3 +669,9 @@ const printCardRickAndMorthy = (ArrayRickAndMorthy) => {
   });
 };
 printCardRickAndMorthy(rickyAndMorty);
+
+document.getElementById("search").addEventListener("keyup", (event) => {
+  //event.target /*representa al elemento que recibe el evento*/
+  let value = event.target.value; /*obtengo lo que esta escrito en el input*/
+  console.log(value);
+});
