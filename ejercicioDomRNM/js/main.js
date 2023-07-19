@@ -1,4 +1,4 @@
-[
+let rickyAndMorty = [
   {
     id: 1,
     name: "Rick Sanchez",
@@ -636,3 +636,36 @@
     created: "2017-11-04T22:34:53.659Z",
   },
 ];
+
+const createCardItem = (rickyAndMorthyObject) => {
+  let { name, image, episode } = rickyAndMorthyObject;
+  let divCol = document.createElement("div");
+  divCol.classList.add("col-sm-6", "col-md-4", "mb-3");
+  let divCard = document.createElement("div");
+  divCard.classList.add("card");
+  let divCardbody = document.createElement("div");
+  divCardbody.classList.add("card-body");
+  let imageCard = document.createElement("img");
+  imageCard.classList.add("card-img-top", "rounded", "mb-2");
+  imageCard.src = image;
+  let title = document.createElement("h5");
+  title.classList.add("card-title");
+  title.innerText = name;
+  let description = document.createElement("p");
+  description.classList.add("card-text");
+  description.innerText = `# ${episode.length}`;
+  divCardbody.appendChild(imageCard);
+  divCardbody.appendChild(title);
+  divCardbody.appendChild(description);
+  divCard.appendChild(divCardbody);
+  divCol.appendChild(divCard);
+  return divCol;
+};
+const printCardRickAndMorthy = (ArrayRickAndMorthy) => {
+  let rowRickAndMorthy = document.getElementById("cards-RickAndMorthy");
+  ArrayRickAndMorthy.forEach((rickAndMorthy) => {
+    let elementRickAndMorthy = createCardItem(rickAndMorthy);
+    rowRickAndMorthy.appendChild(elementRickAndMorthy);
+  });
+};
+printCardRickAndMorthy(rickyAndMorty);
